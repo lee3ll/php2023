@@ -1,0 +1,41 @@
+.tos__inner h2 {
+    padding: 40px 0 20px 0px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+} 
+.tos__inner > p {
+    padding-bottom: 40px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.tos__form {
+    /* padding: 10% 20%; */
+    display: inline-block;
+    width: 100%;
+    
+}
+.tos__form input {
+    margin-bottom: 10px;
+}
+.tos__form input:nth-child(2) {
+    margin-bottom: 50px;
+}
+.tos {
+    height: 80px;
+    overflow-y: scroll;
+    padding: 10px;
+    border: 1px solid #7e7e7e;
+    border-radius: 5px;
+    margin: 0px 0px 30px 0;
+}
+.tos p{
+    text-align: left;
+    line-height: 1.5;
+}
+
+fieldset button {
+    margin-top: 30px;
+}

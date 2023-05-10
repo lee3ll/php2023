@@ -1,0 +1,151 @@
+/* join__form */
+.join__inner{
+    padding: 10% 0;
+}
+.join__inner h2 {
+    font-size: 30px;
+    text-align: center;
+}
+.join__inner .index{
+    text-align: center;
+}
+.join__inner .index ul{
+    position: relative;
+    display: inline-block;
+}
+.join__inner .index ul::before{
+    content: '';
+    background-color: var(--color__black);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -2px;
+    width: 100%;
+    height: 3px;
+    z-index: -1;
+
+}
+.join__inner .index li{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--color__black);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    background-color: var(--bg__gray);
+}
+.join__inner .index li:nth-child(2){
+    margin: 20px 30px;
+}
+.join__inner .index li.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.join__agree {
+    padding: 10% 20% 0% 20%;
+}
+.join__agree .scroll {
+    height: 300px;
+    background-color: var(--bg__gray3);
+    padding: 20px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+.join__agree .check {
+    padding: 7px 0;
+}
+.join__agree .check label {
+    display: inline-block;
+    font-size: 18px;
+}
+.join__agree .check input {
+    width: 17px;
+    height: 17px;
+    vertical-align: -3px;
+}
+
+
+.join__form {
+    padding: 10% 20%;
+}
+.join__form div {
+    margin-bottom: 3em;
+}
+.join__form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-size: 1.2em;
+}
+.join__form label.required::after {
+    content: " *";
+    color: #ff0000;
+}
+.join__form input {
+    background-color: #f5f5f5;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1em 2em;
+    border: 0;
+    font-weight: 300;
+}
+.join__form .over {
+    display: flex;
+    flex-wrap: wrap;
+}
+.join__form .over label {
+    width: 100%;
+}
+.join__form .over input{
+    width: 70%;
+}
+.join__form .over .youCheck {
+    width: 28%;
+    display: inline-block;
+    background-color: var(--color__black);
+    border-radius: 5px;
+    color: var(--color__white);
+    text-align: center;
+    padding-top: 15px;
+    margin-left: 2%;
+}
+.join__form .over .msg {
+    width: 100%;
+}
+.join__form .msg {
+    padding: 7px 0;
+    color: var(--bg__red);
+}
+.join__form .msg::before {
+    /* content: '*'; */
+}
+
+/* media */
+@media (max-width:600px){
+    .intro__inner.center .intro__text{
+        font-size: 1rem;
+        padding: 0;
+    }
+    .join__form {
+        padding: 10% 10% 5% 10%;
+    }
+    .join__inner h2 {
+        font-size: 24px;
+    }
+    .join__form div label {
+        font-size: 1rem;
+    }
+    .join__form div input {
+        padding: 0.6em 1em;
+        font-size: 1rem;
+    }
+    .join__form button {
+        margin: 2em auto;
+        font-size: 1.2rem;
+    }
+    .join__form div {
+        margin-bottom: 2em;
+    }
+}

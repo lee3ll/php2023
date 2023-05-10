@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main페이지</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <style>
+        
+        /* imgText start */
+        main{
+            background-color: #FFF4FE;
+        }
+        .imgText__inner2,
+        .imgText__inner{
+            margin: 0 auto;
+            text-align: center;
+        }
+        .text__inner h1 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+        .text__inner h2 {
+            font-size: 20px;
+        }
+        .text__inner p {
+            font-size: var(--font__size);
+        }
+        .text__inner .desc1{
+            color: #666666;
+        }
+        .text__inner .desc2{
+            font-weight: 700;
+            text-decoration: underline !important;
+            text-underline-position: under;
+        }
+        .img__inner a{
+            width: 290px;
+            height: 290px;
+            margin: 5px;
+        /* ?    background-image: url(assets/img/textImg01.png); */
+        }
+        .img__inner .imgTextImg1{
+            max-width: 1200px
+        }
+        .text__inner2 h1 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+        .text__inner2 .desc3 {
+            font-size: 20px;
+            color: #666666;
+        }
+        .text__inner2 p {
+            font-size: var(--font__size);
+        }
+        .text__inner2 .desc1{
+            color: #666666;
+        }
+        .text__inner2 .desc2{
+            font-weight: 700;
+            text-decoration: underline !important;
+            text-underline-position: under;
+        }
+        .text__inner2 .btn a{
+            width: 180px;
+            line-height: 40px;
+            background-color: #D9D9D9;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+        }
+        .img__inner2{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .img__inner2 a{
+            width: 290px;
+            height: 290px;
+            margin: 5px;
+        }
+        .img__inner2 a img{
+            display: none;
+        }
+        .commImg1{
+            background-image: url(assets/img/community01.png);
+        }
+        .commImg2{
+            background-image: url(assets/img/community02.png);
+        }
+        .commImg3{
+            background-image: url(assets/img/community03.png);
+        }
+        .commImg4{
+            background-image: url(assets/img/community04.png);
+        }
+        .commImg5{
+            background-image: url(assets/img/community05.png);
+        }
+        .commImg6{
+            background-image: url(assets/img/community06.png);
+        }
+        .commImg7{
+            background-image: url(assets/img/community07.png);
+        }
+        .commImg8{
+            background-image: url(assets/img/community08.png);
+        }
+       /* imgtext End */
+
+        /* imgslider start */
+        .slider__inner2 .slider {
+            align-items: center;  
+            height: 650px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            z-index: 1;
+            margin: 0 auto;
+        }
+        .slider__inner2 .slider.img1{
+            background-image: url(assets/img/slider01_01.png);
+        }
+        .slider__inner2 .slider.img2{
+            background-image: url(assets/img/slider01_02.png);
+        }
+        .slider__inner2 .slider.img3{
+            background-image: url(assets/img/slider01_03.png);
+        }
+
+        .slider__inner2 .slider__info {
+            width: 1920px;
+            margin: 0 auto;
+            padding: 120px;
+        }
+        .slider__inner2 .slider__info .small {
+            display: inline-block;
+            padding: 1px 30px;
+            background-color: #fff;
+            color: #000;
+            font-size: 16px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .slider__inner2 .slider__info .title{
+            font-size: 80px;
+            color: #fff;
+            margin-bottom: 40px;
+            margin-left: -5px;
+        }
+        .slider__inner2 .slider__info .title1 {
+            font-size: 150px;
+            color: #fff;
+            margin: 80px 0 40px 250px;
+        }
+        .slider__inner2 .slider__info h4{
+            color: #fff;
+        }
+        .slider__inner2 .slider__info .desc{
+            font-size: 18px;
+            line-height: 1.5;
+            color: #fff;
+            width: 80%;
+            word-break: keep-all;
+        }
+        .slider__inner2 .slider__info .desc1 {
+            color: #fff;
+            font-size: 18px;
+            margin-left: 700px;
+        }
+        .slider__inner2 .slider__info .btn{
+            position: absolute;
+            bottom: 10rem;
+        }
+        .slider__inner2 .slider__info .btn a {
+            text-decoration: none;
+            width: 180px;
+            background-color: #fff;
+            font-size: 16px;
+            display: inline-block;
+            text-align: center;
+            padding: 12px 0;
+            margin-right: 4px;
+        }
+        .slider__inner2 .slider__info .btn a:last-child{
+            background-color: #000;
+            color: #fff;
+        }
+        .swiper-button-prev,
+        .swiper-button-next  {
+            width: 30px;
+            height: 65px !important;
+            background-image: url(assets/img/slider01_icon.svg);
+            background-size: 500px;
+        }
+        .swiper-button-next {
+            background-position: -55px 0;
+        }
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+            font-size: 0 !important;
+        }
+        /* imgslider end */
+
+        /* icon slider start */
+        .slider__inner {
+            width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 160px;
+    
+        }
+        .slider__inner > p {
+            text-align: center;
+            font-size: 20px;
+        }
+        .slider__inner > h2 {
+            padding-top: 80px;
+            padding-bottom: 40px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .slider1 {
+            display: flex;
+            align-items: center;
+            
+            height: 300px;
+            
+        }
+        .slider1 .slider__img {
+            box-sizing: border-box;
+            width: 100%;
+            height: 300px;
+        }
+        .slider1 .slick-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider1 .slick-slide img {
+            align-items: center;
+            background-color: #fff;
+            border-radius: 5%;
+            width: 180px;
+            height: 180px;
+            transition: all 0.1s;
+        }
+        .slider1 .slick-slide img:hover {
+            transform: scale(1.1);
+        }
+        .slick-prev:before, .slick-next:before {
+            color: #444444;
+        }
+        
+        .slick-prev:before, .slick-next:before {
+            position: absolute;
+            left: -15px;
+            z-index: 1000;
+            font-size: 50px !important;
+            line-height: 0.5 !important;
+        }
+        #slider__bottom {
+            background-image: url(assets/img/slider02_01.png);
+            background-size: cover;
+            width: 100%;
+            height: 475px;
+        }
+        #slider__bottom h1{
+            font-weight: 700px;
+            font-size: 40px;
+            padding-top: 10rem;
+            text-align: center;
+            
+        }
+        /* icon slider end */
+        /* scroll start */
+        #scroll::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 5px;
+            background-color: #FAFAFA;
+        }
+        #scroll::-webkit-scrollbar
+        {
+            width: 8px;
+            background-color: #F5F5F5;
+        }
+        #scroll::-webkit-scrollbar-thumb
+        {
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #EAAFC8;
+        }
+        /* scroll end */
+
+    </style>
+</head>
+<body id="scroll">
+    <header id="header" >
+        <div class="header__inner">
+            <div class="kategorie">
+                <div class="kategorie__menu">
+                    <img src="assets/img/kategorie.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="#">기초</a></li>
+                    <li><a href="#">마스크팩</a></li>
+                    <li><a href="#">선케어</a></li>
+                    <li><a href="#">클렌징</a></li>
+                    <li><a href="#">메이크업</a></li>
+                    <li><a href="#">헤어</a></li>
+                    <li><a href="#">바디</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <h1>
+                    <a href="#" ></a>
+                </h1>
+            </div>
+            <div class="user">
+                <a href="#">
+                    <img src="assets/img/user.png" alt="">
+                </a>
+                <ul>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- //header -->
+    <main id="main container" class="mt80" >
+        <div class="slider__inner2">            
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slider img1">
+                            <div class="slider__info">
+                                <span class="small">EVENT</span>
+                                <h3 class="title">Abide By Beauty</h3>
+                                <h4>Protect Your Skin</h4>
+                                <p class="desc"> 다시쓰기 찝찝한 쓰다만 화장품, <br>
+                                    정확한 유통기한을 확인하고 사용기간을 지켜 트러블이 나지 않도록 하세요.</p>
+                                <div class="btn">
+                                    <a href="#">자세히보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider img2">
+                            <div class="slider__info">
+                                <span class="small">EVENT</span>
+                                <h3 class="title">Abide By Beauty</h3>
+                                <p class="desc">피부타입을 확인해 보세요!</p>
+                                <div class="btn">
+                                    <a href="#">테스트하러 가기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slider img3">
+                            <div class="slider__info">
+                                <h3 class="title1">Abide By Beauty</h3>
+                                <p class="desc1">당신의 아름다움을 지키는 ABB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>                 
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>                
+            </div>                               
+        </div>
+        <div class="slider__inner">
+            <p class="mb50">유통기한이 궁금한 화장품을 선택해보세요!</p>
+            <div class="slider1">
+                <div class="slider__img"><a href="#"><img src="assets/img/beauty_icon01.png" alt="아이콘1"></a></div>
+                <div class="slider__img"><a href="#"><img src="assets/img/beauty_icon02.png" alt="아이콘2"></a></div>
+                <div class="slider__img"><a href="#"><img src="assets/img/beauty_icon03.png" alt="아이콘3"></a></div>
+                <div class="slider__img"><a href="#"><img src="assets/img/beauty_icon04.png" alt="아이콘4"></a></div>
+                <div class="slider__img"><a href="#"><img src="assets/img/beauty_icon05.png" alt="아이콘5"></a></div>
+                <div class="slider__img"><a href="#"><img src="assets/img/beauty_icon06.png" alt="아이콘6"></a></div>
+                <div class="slider__img"><a href="#"><img src="assets/img/beauty_icon07.png" alt="아이콘7"></a></div>
+            </div>
+        </div>
+        <div id="slider__bottom">
+            <div>
+                <h1>"소중한 당신의 피부를 지켜주세요."</h1>
+            </div>
+            <!-- <img src="assets/img/slider02_01.png" alt="슬라이드밑사진"> -->
+        </div>
+        <div class="imgText__inner">
+            <div class="text__inner">
+                <h2 class="mt100">"Take care of your skin."</h2> 
+                <h1 class="mt30">ABB</h1>
+                <p class="desc1 mt30">ABB는 화장품 유통기한을 확인 하는 공간입니다.</br>
+                    화장품의 유통기한을 간편하게 확인한 후</br>
+                    당신의 피부와 아름다움을 지켜주세요. </br>
+                    이제는 당신의 화장품을 쌓아두지 마세요</br>
+                    과감히 버릴 수 있도록 ABB가 도와드립니다.</p>
+                <p class="desc2 mt30">당신의 아름다움을 지키는 ABB</p>
+            </div>
+            
+            <div class="img__inner mt100 ">
+                <img class="imgTextImg1" src="assets/img/textImg01.png" alt="이미지1">
+            </div>
+        </div> 
+        <div class="imgText__inner2 mb100 ">
+            <div class="text__inner2">
+                <h1 class="mt100">community</h1>
+                <h2 class="desc3 mt20">화장품에 대한 이야기를 마음껏 나눠보세요</h2> 
+                <div class="btn mt20">
+                    <a href="#">보러가기</a>
+                </div>
+            </div>
+            <div class="img__inner2 mt100 ">
+                <a class="commImg1" href="#"><img alt="이미지1"></a>
+                <a class="commImg2" href="#"><img alt="이미지2"></a>
+                <a class="commImg3" href="#"><img alt="이미지3"></a>
+                <a class="commImg4" href="#"><img alt="이미지4"></a>
+            </div>
+            <div class="img__inner2 ">
+                <a class="commImg5" href="#"><img alt="이미지5"></a>
+                <a class="commImg6" href="#"><img alt="이미지6"></a>
+                <a class="commImg7" href="#"><img alt="이미지7"></a>
+                <a class="commImg8" href="#"><img alt="이미지8"></a>
+            </div>
+        </div> 
+        <footer id="footer" >
+            <div class="footer__inner">
+                <div class="logo2">
+                    <h1>ABB
+                        <p>COMMUNITY</p>
+                    </h1>
+    
+                </div>
+                <div class="fot">
+                    <div class="nav">
+                        <ul>
+                            <li>뉴스보기</li>
+                            <li>공유게시판</li>
+                            <li>정보보기</li>
+                            <li>FAQ</li>
+                        </ul>
+                    </div>
+                    <div class="copyright">
+                        <p>COPYRIGHT©ABB</p>
+                        <p>ALL RIGHTS RESERVED</p>
+                    </div>
+                </div>
+            </div> 
+        </footer>
+        <!-- //footer -->
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        document.querySelector(".kategorie").addEventListener("mouseover", e => {
+            document.querySelector(".kategorie ul").style.display = "block";
+        });
+        document.querySelector(".kategorie").addEventListener("mouseout", e => {
+            document.querySelector(".kategorie ul").style.display = "none";
+        });
+
+        document.querySelector(".user").addEventListener("mouseover", e => {
+            document.querySelector(".user ul").style.display = "block";
+        });
+        document.querySelector(".user").addEventListener("mouseout", e => {
+            document.querySelector(".user ul").style.display = "none";
+        });
+
+
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false
+            },
+
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true
+            },
+        
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }
+        });
+        // const btnStop = document.querySelector(".swiper-button-stop");
+        // const btnStart = document.querySelector(".swiper-button-play");
+
+        // // btnStart.style.display = "none";
+
+        // btnStop.addEventListener("click", ()=>{
+        //     swiper.autoplay.stop();
+        //     btnStart.style.display = "block";
+        //     btnStop.style.display = "none";
+        // });
+        // btnStart.addEventListener("click", ()=>{
+        //     swiper.autoplay.start();
+        //     btnStart.style.display = "none";
+        //     btnStop.style.display = "block";
+        // });
+        
+    </script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $( document ).ready( function() {
+            $('.slider1').slick( {
+            autoplay: true,
+            autoplaySpeed: 4000,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            });
+        });  
+    </script>
+</body>
+</html>

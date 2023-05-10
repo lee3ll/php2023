@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script defer src="assets/js/common.js"></script>
+    <style>
+        
+        .Terms1{
+            width: 1200px;
+            height: 260px;
+            background-color: #ccc;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .Terms__inner{
+            padding: 30px 30px;
+            background-color: #f5f5f5;
+        }
+        .Terms1 .scroll{
+            overflow-y: scroll;
+            height: 300px;
+            padding: 20px;
+            background-color: var(--bg__gray);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="gray">
+    
+    <div id="skip">
+        <a href="#header">헤더 영역 바로가기</a>
+        <a href="#main">컨텐츠 영역 바로가기</a>
+        <a href="#footer">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="header">
+        <div class="header__inner container">
+            <div class="left">
+                <a href="../assets/index.html" class="star">
+                    <span class="blind">메인으로</span>
+                </a>
+            </div>
+            <h1 class="logo"><a href="main.html">Developer Blog</a></h1>
+            <div class="right">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="nav__inner">
+            <ul>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">블로그</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main" class="container">
+        <div class="intro__inner center bmStyle">
+            <picture class="intro__images">
+                <source srcset="assets/img/join01.png, assets/img/join01@2x.png 2x, assets/img/join01@3x.png 3x" />
+                <img src="assets/img/join01.png" alt="회원가입 이미지">
+            </picture>
+            <p class="intro__text">
+                회원가입을 해주시면 다양한 정보를 자유롭게 볼 수 있습니다.
+            </p>
+        </div>
+        <div class="join__inner" container>
+            <h2>이용약관</h2>
+            <div class="index">
+                <ul>
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                <div class="join__agree">
+                    <div class="Terms__inner scroll">                        
+                        <span>[서비스 이름] 이용약관
+                            제1조 (목적) 본 이용약관은 [서비스 이름] (이하 '회사')이 제공하는 서비스의 이용 조건 및 절차, 회사와 회원의 권리, 의무, 책임 사항 등 기타 필요한 사항을 규정하는 것을 목적으로 합니다.<br>
+                            제2조 (용어의 정의)<br>
+                            1. "서비스"란 회사가 제공하는 [서비스 이름] 서비스를 말합니다.<br>
+                            2. "회원"이란 서비스에 접속하여 본 이용약관에 따라 이용 계약을 체결하고 회사가 제공하는 서비스를 이용하는 고객을 말합니다.<br>
+                            3. "아이디(ID)"란 회원 식별과 서비스 이용을 위하여 회원이 설정하고 회사가 승인하는 문자와 숫자의 조합을 말합니다.<br>
+                            4. "비밀번호"란 회원이 부여 받은 아이디와 일치되는 회원임을 확인하고 회원의 비밀보호를 위해 회원 자신이 설정한 문자와 숫자의 조합을 말합니다.<br>
+                            제3조 (이용계약의 체결)<br>
+                                이용계약은 회원이 회사가 제공하는 이용 신청 양식에 기재하여 이용 신청을 하고, 회사가 이를 승낙함으로써 체결됩니다.<br>
+                                회사는 회원이 다음 각 호의 경우에는 이용 신청을 승낙하지 아니할 수 있습니다.<br>
+                                가. 만 14세 미만인 경우<br>
+                                나. 가입 신청 시 입력한 내용이 허위인 경우<br>
+                                다. 기타 회사가 정한 이용 신청 요건을 충족하지 못하는 경우<br>
+                        </span>                                              
+                        <div>
+                            <input type="checkbox"><p>이용약관 동의</p>
+                        </div>
+                    </div>
+
+                    <div class="Terms2 scroll">
+                        <h3>[회사/서비스 이름] 개인정보 수집 및 이용약관</h3>
+                        <p> 제1조 (목적) 본 개인정보 수집 및 이용약관은 [회사/서비스 이름] (이하 '회사')이 제공하는 서비스 이용과 관련하여 회원의 개인정보를 수집하고 이를 어떻게 이용하는지에 대한 내용을 규정하는 것을 목적으로 합니다.
+                            제2조 (수집하는 개인정보 항목 및 수집 방법)
+                            회사는 회원가입, 서비스 이용, 문의 등을 위해 아래와 같은 개인정보를 수집할 수 있습니다.
+                            수집항목: 성명, 아이디(ID), 비밀번호, 전화번호, 이메일 등
+                            수집방법: 홈페이지 회원가입, 서비스 이용, 이메일 문의 등
+                            회원이 개인정보 수집에 대한 동의를 거부하는 경우, 서비스 이용이 제한될 수 있습니다.
+                        </p>
+                        <div></div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer ">
+        <div class="footer__inner btStyle mb100 container">
+            <div>Copytright @2023 lee3ll</div>
+            <div>blog by webs</div>
+        </div>
+    </footer>
+    <!-- //footer -->
+</body>
+</html>

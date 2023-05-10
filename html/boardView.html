@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- SCRIPT -->
+    <script defer src="assets/js/common.js"></script>
+</head>
+<body class="gray">
+    <div id="skip">
+        <a href="#header">헤더 영역 바로가기</a>
+        <a href="#main">컨텐츠 영역 바로가기</a>
+        <a href="#footer">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+    <header id="header">
+        <div class="header__inner container">
+            <div class="left">
+                <a href="../index.html" class="star">
+                    <span class="blind">메인으로</span>
+                </a>
+            </div>
+            <h1 class="logo">
+                <a href="main.html">Developer Blog</a>
+            </h1>
+            <div class="right">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="nav__inner">
+            <ul>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">블로그</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main" class="container">
+        <div class="intro__inner center container">
+            <picture class="intro__images small">
+                <source srcset="assets/img/join01.png, assets/img/join01@2x.png 2x, assets/img/join01@3x.png 3x" />
+                <img src="assets/img/join01.png" alt="회원가입 이미지">
+            </picture>
+            <h2>게시글 보기</h2>
+            <p class="intro__text">
+                웹디자이너,웹퍼블리셔,프론트앤드 개발자를 위한 게시판입니다.
+                관련된 문의사항은 여기서 확인하세요!
+            </p>
+        </div>
+        <!-- intro__text -->
+
+        <div class="board__inner">
+            <div class="board__view">
+                <table>
+                    <colgroup>
+                        <col style="width: 20%">
+                        <col style="width: 80%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제목</th>
+                            <td>게시판 제목입니다.</td>
+                        </tr>
+                        <tr>
+                            <th>등록자</th>
+                            <td>엡쓰</td>
+                        </tr>
+                        <tr>
+                            <th>등록일</th>
+                            <td>2023-03-03</td>
+                        </tr>
+                        <tr>
+                            <th>조회수</th>
+                            <td>99</td>
+                        </tr>
+                        <tr>
+                            <th>내용</th>
+                            <td>
+                                프론트 앤드 개발자로 취업하고자 한다면, 다음과 같은 노하우를 참고해 보세요. 학습과 경험: 프론트 앤드 개발자로 취업하기 위해서는 HTML, CSS, JavaScript 등의 프로그래밍 언어와 웹 기술들에 대한 깊은 이해와 경험이 필요합니다. 이를 위해서는 관련 학과나 강의를 수강하거나, 온라인 강의나 서적 등으로 스스로 학습하며, 실제 프로젝트에 참여하는 등의 경험을 쌓아나가는 것이 중요합니다. 포트폴리오: 포트폴리오는 취업 시 중요한 역할을 합니다. 스스로 만든 프로젝트를 포트폴리오로 제출하거나, 개인 웹사이트나 GitHub 등을 통해 자신의 실력을 어필할 수 있습니다. 이때, 만들어진 프로젝트가 기업과 관련이 있는 것이 좋으며, 퀄리티 높은 UI/UX가 반영되어야 합니다. 자기소개서와 면접: 이력서와 자기소개서를 작성할 때에는 구체적인 개발 경험과 프로젝트에 대한 내용을 자세하게 작성하고, 어떤 기술과 도구를 사용해왔는지 명확하게 기술하여야 합니다. 면접 시에는 기본적인 개발 기술과 경험에 대한 질문을 기본으로, 실무에서 발생할 수 있는 문제에 대한 해결능력과 협업 능력을 어필하는 것이 좋습니다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="board__btn mb100">
+                <a href="#" class="btnStyle3">수정하기</a>
+                <a href="#" class="btnStyle3">삭제하기</a>
+                <a href="board2.html" class="btnStyle3">목록보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer ">
+        <div class="footer__inner btnStyle mb100 container">
+            <div>Copytright @2023 lee3ll</div>
+            <div>blog by webs</div>
+        </div>
+    </footer>
+    <!-- //footer -->
+</body>
+</html>
