@@ -1,18 +1,25 @@
 <?php
     include "../connect/connect.php";
     // SELECT youEmail FROM adminMenbers WHERE youEmail = {}
-    
+
     $type = $_POST['type'];
-    $email = $_POST['youEmail'];
     $jsonResult = "bad";
+
     if( $type == "isEmailCheck"){
-        $youEmail = $connect -> real_escape_string(trim($email));
+        $youEmail = $connect -> real_escape_string(trim($_POST['youEmail']));
         $sql = "SELECT adminEmail FROM adminMembers WHERE adminEmail = '{$youEmail}'";
     }
+
+    if( $type == "isNickCheck"){
+        $youNick = $connect -> real_escape_string(trim($_POST['youNick']));
+        $sql = "SELECT adminEmail FROM adminMembers WHERE adminEmail = '{$youNick}'";
+    }
+
     $result = $connect -> query($sql);
     if( $result -> num_rows == 0 ){
         $jsonResult = "good";
     }
+
     echo json_encode(array("result" => $jsonResult));
 ?>
 

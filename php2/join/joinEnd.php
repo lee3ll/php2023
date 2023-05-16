@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../html/assets/css/style.css">
 
     <!-- SCRIPT -->
-    <script defer src="assts/js/common.js"></script>
+    <script defer src="../html/assets/js/common.js"></script>
 
 </head>
 
@@ -24,23 +24,19 @@
     </div>
     <!-- //skip -->
 
-    <header id="header">
-        <div class="header__inner">
-            <h1 class="logo"><a href="./main.html">회원가입 완료</a></h1>
-        </div>
-    </header>
-    <!-- //header -->
+    <?php include "../include/abbHeader.php" ?>
+        <!-- //header -->
 
     <main id="main" class="container">
 
         <div calss="joinEnd__inner">
-            <p class="joinEnd__text">Abide By Beauty<br>
-                <!-- <a>정희석(닉네임)님 반갑습니다.</a> -->
+            <h2 class="joinEnd__h2 mt120">회원가입 완료</h2>
+            <p class="joinEnd__p mt20">정희석(닉네임)님 반갑습니다.
 <?php
     include "../connect/connect.php"
-
 ?>
             </p>
+            
             <div class="joinEnd__form">
                 <p>ABB는 화장품 유통기한을 확인 하는 공간입니다.<br>
                     화장품의 유통기한을 간편하게 확인한 후<br>
@@ -52,7 +48,24 @@
         </div>
     </main>
     <!-- //main -->
+    <?php
+
+    //회원가입
+    include "../connect/connect.php";
+
+    $youEmail = $_POST['memberID'];
+    $youName = $_POST['youName'];
+    $youPass = $_POST['youPass'];
+    $youPhone = $_POST['youPhone'];
+    $youBirth = $_POST['youBirth'];
+    $nickName = $_POST['nickName'];
+    $regTime = time();
+
+        // 데이터 입력하기
+        $sql = "INSERT INTO members2 (youEmail, youName, youPass, youPhone, regTime, nickName, youBirth, youImgSrc, youImgSize, youGender) VALUES('$youEmail', '$youName', '$youPass', '$youPhone', '$regTime', '$nickName', '$youBirth', 'null', 'null', 'null')";
+        
+        $result = $connect -> query($sql);
+    ?>
 
 </body>
-
 </html>

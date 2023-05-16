@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP 블로그 만들기</title>
+
+    <!-- Toast UI Editor -->
+	<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script defer src="assets/js/common.js"></script>
+    
+    <style>
+        :not(.auto-height)>.toastui-editor-defaultUI>.toastui-editor-main {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body class="gray">
+    
+    <!-- //skip -->
+
+    <header id="header">
+        <div class="header__inner container">
+            <div class="left">
+                <a href="../assets/index.php" class="star">
+                    <span class="blind">메인으로</span>
+                </a>
+            </div>
+            <h1 class="logo"><a href="main.html">Developer Blog</a></h1>
+            <div class="right">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="nav__inner">
+            <ul>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">블로그</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main" class="container">
+        <div class="blog__search">
+            <h2>카페투어 블로그 입니다.</h2>
+            <p>카페를 소개하는 글입니다.</p>
+            <div class="intro__inner center bmStyle">
+                <picture class="intro__images small">
+                    <source srcset="assets/img/join01.png, assets/img/join01@2x.png 2x, assets/img/join01@3x.png 3x" />
+                    <img src="assets/img/join01.png" alt="회원가입 이미지">
+                </picture>
+                <h2>게시글 작성하기</h2>
+                <p class="intro__text">
+                    웹디자이너,웹퍼블리셔,프론트앤드 개발자를 위한 게시판입니다.
+                    관련된 문의사항은 여기서 확인하세요!
+                </p>
+            </div>
+            <!-- intro__text -->
+            
+    
+            <div class="board__inner">
+                <div class="blog__write">
+                    <form action="#" name="#" method="post">
+                        <fieldset>
+                            <legend class="blind">게시글 작성하기</legend>
+                            
+                            <div>
+                                <label for="boardTitle">제목</label>
+                                <input type="text" id="board__title" name="boardTitle" class="inputStyle">
+                            </div>
+                            <div>
+                                <label for="boardContents">내용</label>                                
+                                <!-- <textarea name="boardContents" id="boardContents" rows="20" class="inputStyle"></textarea> -->
+                                <div id="editor"></div>
+                            </div>
+                            <button type="submit" class="btnStyle3">저장하기</button>
+                        </fieldset>
+                    </form>
+                </div>
+             </div>
+        </div>        
+        
+         
+
+        <!-- 
+            <div class="sliders__inner"></div> 각 페이지 소개 배너
+            <div class="join__inner"></div> 회원가입 페이지
+            <div class="login__inner"></div> 로그인 페이지
+            <div class="board__inner"></div> 게시판 페이지
+            <div class="blog__inner"></div> 블로그 메인
+                        
+            <div class="banners__inner"></div>
+            <div class="cards__inner"></div>
+            <div class="images__inner"></div>
+            <div class="ads__inner"></div>
+            <div class="texts__inner"></div>
+            <div class="login__inner"></div> 회원가입 페이지
+            
+            <div class="bolg__inner"></div> -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer ">
+        <div class="footer__inner btStyle mb100 container">
+            <div>Copytright @2023 lee3ll</div>
+            <div>blog by webs</div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+	<script>
+		const Editor = toastui.Editor;
+	
+		const editor = new Editor({
+			  el: document.querySelector('#editor'),
+			  height: '600px',
+			  initialEditType: 'markdown',
+			  previewStyle: 'vertical'
+			});
+		
+		seeHtml = function(){
+			alert(editor.getHTML());
+		}
+		seeMd = function(){
+			alert(editor.getMarkdown());
+		}
+	</script>
+</body>
+</html>
