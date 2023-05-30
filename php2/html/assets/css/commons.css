@@ -44,6 +44,11 @@ body.windows {
     max-width: 480px;
     margin: 0 auto;
 }
+.container2 {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 /* border style */
 .bmStyle {
@@ -102,6 +107,7 @@ body.windows {
     border: 1px solid #F06171;
     border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
 }
 /* 검색버튼 */
 .btnStyle4 {
@@ -112,6 +118,7 @@ body.windows {
     border-radius: 5px;
     font-size: 16px;
     padding: 8px 50px 8px 50px;
+    cursor: pointer;
 }
 /* 글쓰기 수정 삭제 */
 .btnStyle5 {
@@ -122,6 +129,7 @@ body.windows {
     border-radius: 5px;
     font-size: 16px;
     padding: 10px 50px 10px 50px;
+    
 } 
 /* 회원정보수정 버튼 1 */
 .infoBtnStyle1 {
@@ -235,25 +243,6 @@ label.required::after {
     border: 0;
 }
 
-/* scroll start */
-#scroll::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 5px;
-    background-color: #FAFAFA;
-}
-#scroll::-webkit-scrollbar
-{
-    width: 8px;
-    background-color: #F5F5F5;
-}
-#scroll::-webkit-scrollbar-thumb
-{
-    border-radius: 5px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #EAAFC8;
-}
-/* scroll end */
 
 /* media */
 @media (max-width : 1300px){

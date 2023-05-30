@@ -8,7 +8,6 @@
 
     $boardTotalCount = $result -> fetch_array(MYSQLI_ASSOC);
     $boardTotalCount = $boardTotalCount['count(boardID)'];
-
 ?>
 <!DOCTYPE html>
 <html lang="ko">

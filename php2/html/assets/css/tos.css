@@ -39,3 +39,63 @@
 fieldset button {
     margin-top: 30px;
 }
+
+/* joinagree */
+/* .join__agree {
+    padding: 10% 0 5%;
+}
+.joinagree__box {
+    border: 1px solid #d9d9d9;
+    height: 150px;
+    background-color: #fffffff3;
+    padding: 20px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+.join__agree .check {
+    padding: 7px 0;
+}
+.join__agree .check label {
+    display: inline-block;
+    font-size: 18px;
+}
+.join__agree .check input {
+    width: 17px;
+    height: 17px;
+    vertical-align: -3px;
+}  */
+
+.join__agree {
+    margin: 0 auto;
+    padding: 2% 0;  
+}
+.joinagree__box {
+    margin: 0 auto;
+    border: 1px solid #d9d9d9;
+    width: 100%;
+    height: 300px;
+    background-color: #fffffff3;
+    padding: 20px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+.join__agree .check {
+    display: flex;
+    /* justify-content: center; */
+    padding: 7px 0;
+}
+.join__agree .check label {
+    display: inline-block;
+    font-size: 18px;
+}
+.join__agree .check input {
+    width: 17px;
+    height: 17px;
+    vertical-align: -3px;
+}
+.join__agree .agreeMsg{
+    color: red;
+}
+.join__agree .agreeBtn {
+    margin: 75px 0;
+}

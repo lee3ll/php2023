@@ -1,3 +1,6 @@
+@import url('https://webfontworld.github.io/zess/BlackHanSans.css');
+@import url('https://webfontworld.github.io/lotte/GhanaChocolate.css');
+@import url('https://webfontworld.github.io/kohi/KOHIBaeum.css');
 
 /* imgText start */
 .category-main {
@@ -8,7 +11,7 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     background-color: #FAFAFA;
-}
+}  
 
 #scroll::-webkit-scrollbar {
     width: 8px;
@@ -50,6 +53,10 @@
     width: 80%;
     cursor: pointer;
 }
+.category_logo a img.active {
+    background-color:#F06171;
+}
+
 
 #select1 {
     width: 25%;
@@ -152,7 +159,7 @@
     padding: 10px;
     border: 1px solid #F797A2;
     border-radius: 5px;
-    width: 25%;
+    width: 200px !important;
     height: 45px;
     background-color: #f9f9f9;
 }
@@ -168,33 +175,99 @@
     font-weight: 600;
 }
 
-.product_inner>div {
+.product_inner {
     margin-top: 10px;
     margin-bottom: 34px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .product_inner .card {
-    width: 23%;
-    background-color: #fff;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    margin: 50px 0;
+    font-family: 'KOHIBaeum';
+    color: #000;
+}
+.card {
+    height: 60vh;
+}
+.card span {
+    color: #fff;
+    font-size: 0.8em
 }
 
+.title > span {
+    color: #000;
+}
+.card strong {
+    position: relative;
+    margin-left: 55px;
+}
+.card .desc2 strong:nth-child(1):before {
+    position: absolute;
+    content: '';
+    top: -25px;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    /* background-color: #fff; */
+    background-image: url(../img/marks.png);
+    background-size: cover;
+}
+.card .desc2 strong:nth-child(3):before {
+    position: absolute;
+    content: '';
+    transform: rotate(180deg);
+    top: -25px;
+    left: -55px;
+    width: 50px;
+    height: 50px;
+    /* background-color: #fff; */
+    background-image: url(../img/marks.png);
+    background-size: cover;
+}
+.card__header {
+    width: 40%;
+    background-repeat: no-repeat;
+}
+
+.card__header img {
+    width: 100%;
+    height: 548px;
+
+    background-color: #000;
+    border-radius: 5px;
+}
 .card__body {
-    padding: 24px;
+    width: 55%;
+    height: 548px;
+    background-color: #ec6666;
+    border-radius: 5px;
 }
-
 .card__body .title {
+    margin-top: 5%;
+    margin-bottom: 10px;
+    font-size: 2em;
     text-align: center;
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-weight: 300;
+    /* margin-right: 20%; */
+    color: #fff;
 }
-
 .card__body .desc {
+    font-size: 2em;
     text-align: center;
-    font-size: 16px;
-    color: #666;
-    line-height: 1.5;
+    /* margin-left: 40%; */
+    margin-bottom: 20px;
+    padding: 20px;
+    line-height: 1.8;
+}
+.card__body .desc2 {
+    font-size: 2em;
+    text-align: center;
+}
+.card__body .desc2 span{
+    color: #000;
+    font-size: 1em;
 }
 
 @media screen and (max-width: 768px) {

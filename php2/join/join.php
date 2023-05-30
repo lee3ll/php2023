@@ -10,7 +10,7 @@
     <!-- SCRIPT -->
     <script defer src="../html/assets/js/common.js"></script>
 </head>
-<body >
+<body id="scroll">
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
         <a href="#main">컨텐츠 영역 바로가기</a>
@@ -38,7 +38,7 @@
                             <p class="joinChkmsg" id="youPassComment"></p>
                         </div>
                         <div>
-                            <label for="youPassC"></label>
+                            <label for="youPassC"></label> 
                             <input type="password" id="youPassC" name="youPassC" class="inputStyle" placeholder="비밀번호 확인">
                             <p class="joinChkmsg" id="youPassCComment"></p>
                         </div>
@@ -82,10 +82,28 @@
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script>
         
-        // isEmailCheck
         let isEmailCheck = false;
         let isNickCheck = false;
+        let isPhoneCheck = false;
+        let isNameCheck = false;
+        let isBirthCheck = false;
+        let isPassCheck = false;
+
+        
+        // 아이디 유효성 검사
         function chkMemberId(){
+            isEmailCheck = false;
+            let getmemberID =  RegExp(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([\-.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i);
+            $("#memberIDComment").addClass("red");
+            if($("#memberID").val() == ''){
+                $("#memberIDComment").text("* 아이디를 입력해주세요!");
+                return false;
+            }else if(!getmemberID.test($("#memberID").val())){
+                $("#memberIDComment").text("* 아이디 형식에 맞게 작성해주세요! aaa@gmail.com");
+                $("#memberID").val('');
+                return false;
+            }
+            
             $.ajax({
                 type : "POST",
                 url : "joinCheck.php",
@@ -96,12 +114,12 @@
                         $("#memberIDComment").text("* 사용 가능한 아이디 입니다");
                         $("#memberIDComment").removeClass("red");
                         $("#memberIDComment").addClass("green");
-                        console.log("11")
                          isEmailCheck = true;
                     }else {
-                        console.log("22")
                         $("#memberIDComment").text("* 사용 중인 아이디 입니다");
-                         isEmailCheck = false;                         
+                        $("#memberID").val('');
+                         isEmailCheck = false;
+                         return false;           
                     }
                 },
                 error : function(request, status, error){
@@ -109,9 +127,28 @@
                     console.log("status" + status);
                     console.log("error" + error);
                 }
-            })
+            });
+
+            
         }
+        // 닉네임 유효성
         function chkNickName(){
+            isNickCheck = false;
+            // 닉네임 유효성 검사
+            $("#nickNameComment").addClass("red");
+            let getnickName = RegExp(/^[가-힣|0-9]+$/);
+            if($("#nickName").val() == ''){
+                $("#nickNameComment").text("* 닉네임을 입력해주세요!");
+                return false;
+            }else if(!getnickName.test($("#nickName").val())){
+                $("#nickNameComment").text("* 닉네임은 한글 또는 숫자만 사용 가능합니다.");
+                $("#nickName").val('');
+                return false;
+            }else{
+                $("#nickNameComment").removeClass("red");
+                $("#nickNameComment").addClass("green");
+                $("#nickNameComment").text("* 사용가능한 닉네임 입니다.");
+            }
             $.ajax({
                 type : "POST",
                 url : "joinCheck.php",
@@ -122,15 +159,14 @@
                         $("#nickNameComment").text("* 사용 가능한 닉네임 입니다");
                         $("#nickNameComment").removeClass("red");
                         $("#nickNameComment").addClass("green");
-                        console.log("33")
                          isNickCheck = true;
                     }else {
-                        console.log("44")
+                        $("#nickName").val('');
                         $("#nickNameComment").text("* 사용 중인 닉네임 입니다");
                         $("#nickNameComment").removeClass("green");
                         $("#nickNameComment").addClass("red");
                          isNickCheck = false;
-                         
+                         return false;  
                     }
                 },
                 error : function(request, status, error){
@@ -138,39 +174,63 @@
                     console.log("status" + status);
                     console.log("error" + error);
                 }
-            })
+            });
+            
         }
-        //유효성 체크
-        function joinChecks(){
-            // 아이디 유효성 검사
-            let getmemberID =  RegExp(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([\-.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i);
-            $("#memberIDComment").addClass("red");
-            if($("#memberID").val() == ''){
-                $("#memberIDComment").text("* 아이디를 입력해주세요!");
-                $("#memberID").focus();
+        // 핸드폰 유효성
+        function chkYouPhone(){
+            isPhoneCheck = false;
+             $("#youPhoneComment").addClass("red");
+            let getYouPhone = RegExp(/01[016789]-[^0][0-9]{3,4}-[0-9]{4}/);
+            if($("#youPhone").val() == ''){
+                $("#youPhoneComment").text("* 연락처를 입력해주세요!");
                 return false;
-            }else if(!getmemberID.test($("#memberID").val())){
-                $("#memberIDComment").text("* 아이디 형식에 맞게 작성해주세요! aaa@gmail.com");
-                $("#memberID").val('');
-                $("#memberID").focus();
+            }else if(!getYouPhone.test($("#youPhone").val())){
+                $("#youPhoneComment").text("* 휴대폰 번호가 정확하지 않습니다.(000-0000-0000)");
+                $("#youPhone").val('');
                 return false;
             }
-            chkMemberId();
-            if(isEmailCheck==false){
-                return false;  
-            }
-            // 마지막 if문 true 확인 구문
-            // alert(isEmailCheck);
+            $.ajax({
+                type : "POST",
+                url : "joinCheck.php",
+                data : {"youPhone" : $("#youPhone").val(), "type" : "isPhoneCheck"},
+                dataType : "json",
+                success : function(data){
+                    if(data.result == "good"){
+                        $("#youPhoneComment").text("* 사용 가능한 전화번호 입니다");
+                        $("#youPhoneComment").removeClass("red");
+                        $("#youPhoneComment").addClass("green");
+                        isPhoneCheck = true;
+                    }else {
+                        $("#youPhone").val('');
+                        $("#youPhoneComment").removeClass("green");
+                        $("#youPhoneComment").addClass("red");
+                        $("#youPhoneComment").text("* 사용 중인 전화번호 입니다");
+                        isPhoneCheck = false;
+                        return false;  
+                    }
+                },
+                error : function(request, status, error){
+                    console.log("request" + request);
+                    console.log("status" + status);
+                    console.log("error" + error);
+                }
+            });
+            
+            
+        }
+        // 비밀번호 유효성 검사
+        function chkYouPass(){
+            isPassCheck=false;
 
-            // // 비밀번호 유효성 검사
             let getYouPass = $("#youPass").val();
             let getYouPassNum = getYouPass.search(/[0-9]/g);
             let getYouPassEng = getYouPass.search(/[a-z]/ig);
             let getYouPassSpe = getYouPass.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
             $("#youPassComment").addClass("red");
             if($("#youPass").val() == ''){
                 $("#youPassComment").text("* 비밀번호를 입력해주세요!");
-                $("#youPass").focus();
                 return false;
                 // 8~20자이내, 공백X, 영문, 숫자, 특수문자
             }else if(getYouPass.length < 8 || getYouPass.length > 20){
@@ -190,96 +250,118 @@
             // 비밀번호 확인 유효성 검사
             $("#youPassCComment").addClass("red");
             if($("#youPassC").val() == ''){
-            $("#youPassCComment").text("* 확인 비밀번호를 입력해주세요!");
-            $("#youPassC").focus();
-            return false;
-            // 비밀번호 동일한지 체크
+                $("#youPassCComment").text("* 확인 비밀번호를 입력해주세요!");
+                return false;
+                // 비밀번호 동일한지 체크
             }else if($("#youPass").val() !== $("#youPassC").val()){
                 $("#youPassCComment").text("* 비밀번호가 일치하지 않습니다.");
                 return false;
             }else{
                 $("#youPassCComment").text("");
+                isPassCheck = true;
             }
-            //이름 유효성 검사
+        }
+        //이름 유효성 검사
+        function chkYouName(){
+            isNameCheck=false;
             $("#youNameComment").addClass("red");
             let getYouName = RegExp(/^[가-힣]+$/);
             if($("#youName").val() == ''){
                 $("#youNameComment").text("* 이름을 입력해주세요!");
-                $("#youName").focus();
                 return false;
             }else if(!getYouName.test($("#youName").val())){
                 $("#youNameComment").text("* 이름은 한글만 사용 가능합니다.");
                 $("#youName").val('');
-                $("#youName").focus();
                 return false;
             }else if($("#youName").val().length < 2 || $("#youName").val().length > 10){
                 $("#youNameComment").text("* 이름은 2~10글자까지만 가능합니다.");
                 $("#youName").val('');
-                $("#youName").focus();
                 return false;
             }else{
                 $("#youNameComment").removeClass("red");
                 $("#youNameComment").addClass("green");
                 $("#youNameComment").text("* 사용가능합니다");
+                isNameCheck = true;
             }
-            // 연락처 유효성 검사
-            $("#youPhoneComment").addClass("red");
-            let getYouPhone = RegExp(/01[016789]-[^0][0-9]{3,4}-[0-9]{4}/);
-            if($("#youPhone").val() == ''){
-                $("#youPhoneComment").text("* 연락처를 입력해주세요!");
-                $("#youPhone").focus();
-                return false;
-            }else if(!getYouPhone.test($("#youPhone").val())){
-                $("#youPhoneComment").text("* 휴대폰 번호가 정확하지 않습니다.(000-0000-0000)");
-                $("#youPhone").val('');
-                $("#youPhone").focus();
-                return false;
-            }else{
-                $("#youPhoneComment").removeClass("red");
-                $("#youPhoneComment").addClass("green");
-                $("#youPhoneComment").text("* 사용가능한번호입니다.");
-            }
-            // 닉네임 유효성 검사
-            $("#nickNameComment").addClass("red");
-            let getnickName = RegExp(/^[가-힣|0-9]+$/);
-            if($("#nickName").val() == ''){
-                $("#nickNameComment").text("* 닉네임을 입력해주세요!");
-                $("#nickName").focus();
-                return false;
-            }else if(!getnickName.test($("#nickName").val())){
-                $("#nickNameComment").text("* 닉네임은 한글 또는 숫자만 사용 가능합니다.");
-                $("#nickName").val('');
-                $("#nickName").focus();
-                return false;
-            }else{
-                $("#nickNameComment").removeClass("red");
-                $("#nickNameComment").addClass("green");
-                $("#nickNameComment").text("* 사용가능합니다.");
-            }
-            chkNickName();
-            if(isNickCheck==false){
-                return false;  
-            }
-​
+        }
+        // 생년월일 유효성 검사
+        function chkYouBirth(){
+            isBirthCheck = false;
             $("#youBirthComment").addClass("red");
             let getYouBirth = RegExp(/^(19[0-9][0-9]|20\d{2})-(0[0-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/);
-            // 생년월일 유효성 검사
             if($("#youBirth").val() == ''){
                 $("#youBirthComment").text("* 생년월일을 입력해주세요!");
-                $("#youBirth").focus();
                 return false;
             }else if(!getYouBirth.test($("#youBirth").val())){
                 $("#youBirthComment").text("* 생년월일 형식이 정확하지 않습니다.(YYYY-MM-DD)");
                 $("#youBirth").val('');
-                $("#youBirth").focus();
                 return false;
             }else{
                 $("#youBirthComment").removeClass("red");
                 $("#youBirthComment").addClass("green");
                 $("#youBirthComment").text("* 사용가능합니다 !");
-            }      
+                isBirthCheck = true;
+            }
         }
-        
+
+        // 윈도우 로드시 window.onload 함수 쓴것과 같음
+        // 각 input스타일에서 포커스아웃할때(바깥클릭 and tab클릭)실행되게 해놓은 함수
+        $( document ).ready(function() {
+            $('#memberID').blur(function(){
+                chkMemberId();
+            });
+            $('#youPass, #youPassC').blur(function(){
+                chkYouPass();
+            });
+            $('#youName').blur(function(){
+                chkYouName();
+            });
+            $('#youPhone').blur(function(){
+                chkYouPhone();
+            });
+            $('#nickName').blur(function(){
+                chkNickName();
+            });
+            $('#youBirth').blur(function(){
+                chkYouBirth();
+            });
+        }); 
+
+
+        function joinChecks(){
+            if (!isEmailCheck || !isNickCheck || !isPhoneCheck || !isNameCheck || !isBirthCheck || !isPassCheck) {
+            // 위 변수 중 하나라도 false일 때 실행되는 코드
+            switch (false) {
+                    case isEmailCheck:
+                        // isEmailCheck가 false일 때 실행되는 코드
+                        chkMemberId();
+                        break;
+                    case isPassCheck:
+                        // isPassCheck가 false일 때 실행되는 코드
+                        chkYouPass();
+                        break;
+                    case isNameCheck:
+                        // isNameCheck가 false일 때 실행되는 코드
+                        chkYouName();
+                        break;
+                    case isPhoneCheck:
+                        // isPhoneCheck가 false일 때 실행되는 코드
+                        chkYouPhone();
+                        break;
+                    case isNickCheck:
+                        // isNickCheck가 false일 때 실행되는 코드
+                        chkNickName();
+                        break;
+                    case isBirthCheck:
+                        // isBirthCheck가 false일 때 실행되는 코드
+                        chkYouBirth();
+                        break;
+                    default:
+                        break;
+                } 
+                return false;
+            }
+        }
     </script>
 </body>
-</html>
+</html> 

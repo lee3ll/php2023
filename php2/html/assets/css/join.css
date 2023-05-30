@@ -41,7 +41,6 @@ body {
     margin-bottom: 2px;
     font-size: 1.2em; */
 }
-
 .joinChkmsg{
     text-align: left !important;
     font-size: 0.8rem !important;
@@ -54,30 +53,6 @@ body {
     color: #F06171;
 }
 
-/* joinagree */
-.join__agree {
-    padding: 10% 20% 0% 20%;
-}
-.joinagree__box {
-
-    height: 300px;
-    background-color: #fff;
-    padding: 20px;
-    overflow-y: scroll;
-    border-radius: 5px;
-}
-.join__agree .check {
-    padding: 7px 0;
-}
-.join__agree .check label {
-    display: inline-block;
-    font-size: 18px;
-}
-.join__agree .check input {
-    width: 17px;
-    height: 17px;
-    vertical-align: -3px;
-}
 /* media */
 @media (max-width: 600px){
     .intro__inner.center .intro__text {

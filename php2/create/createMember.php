@@ -16,9 +16,22 @@
     $sql .= ") charset=utf8;";
     $result = $connect -> query($sql);
     if($result){
-        echo "create tables Complete";
+        echo "create tables Complete 신규 추가 컬럼확인";
     } else {
-        echo "create tables false";
+        echo "create tables false & 신규 추가 컬럼확인";
     }
 ?>
-<!-- INSERT INTO `members2` (`memberID`, `youEmail`, `youName`, `youPass`, `youPhone`, `regTime`, `nickName`, `youBirth`, `youImgSrc`, `youImgSize`, `youGender`) VALUES ('1', 'admin@admin.com', '관리자', '1234', '000-0000-0000', '1234', '관리자', '1999-01-01', NULL, NULL, NULL); -->
+
+
+
+<!-- ALTER TABLE members2			
+ADD COLUMN KakaoTalk VARCHAR(1) DEFAULT NULL,			
+ADD COLUMN SNSSub VARCHAR(1) DEFAULT NULL,			
+ADD COLUMN KakaoSub VARCHAR(1) DEFAULT NULL;			 
+
+ALTER TABLE members2 ADD COLUMN skinType VARCHAR(10) DEFAULT NULL;
+
+4개 컬ㄹ럼 추가
+-->
+
+
